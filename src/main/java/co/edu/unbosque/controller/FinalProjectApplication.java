@@ -1,4 +1,4 @@
-package co.edu.unbosque.FinalProject;
+package co.edu.unbosque.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,5 +9,6 @@ public class FinalProjectApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FinalProjectApplication.class, args);
 	}
+
 
 }
