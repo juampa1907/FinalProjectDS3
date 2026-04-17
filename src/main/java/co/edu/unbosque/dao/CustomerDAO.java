@@ -22,21 +22,21 @@ public class CustomerDAO implements DAO<Customer> {
 
     @Override
     public List<Customer> findAll() {
-        return List.of();
+        return customerRepository.findAll();
     }
 
     @Override
     public Customer findById(Integer id) {
-        return null;
+        return customerRepository.findById(id).get();
     }
 
     @Override
     public void deleteById(Integer id) {
-
+        customerRepository.deleteById(id);
     }
 
     @Override
     public Customer update(Customer customer) {
-        return null;
+        return customerRepository.save(customer);
     }
 }
