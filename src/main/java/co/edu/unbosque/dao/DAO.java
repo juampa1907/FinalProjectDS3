@@ -1,18 +1,16 @@
-package co.edu.unbosque.service;
-
-import co.edu.unbosque.entity.Customer;
+package co.edu.unbosque.dao;
 
 import java.util.List;
 
 
-public interface CustomerService {
-    Customer save(Customer customer);
+public interface DAO<E> {
+    E save(E object);
 
-    List<Customer> findAll();
+    List<E> findAll();
 
-    Customer findById(Integer id);
+    E findById(Integer id);
 
     void deleteById(Integer id);
 
-    Customer update(Customer customer);
+    E update(E object);
 }

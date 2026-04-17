@@ -1,22 +1,22 @@
-package co.edu.unbosque.controller;
+package co.edu.unbosque.service;
 
+import co.edu.unbosque.dao.CustomerDAO;
 import co.edu.unbosque.entity.Customer;
-import co.edu.unbosque.service.CustomerService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CustomerController {
+public class CustomerService {
 
-    private final CustomerService customerService;
+    private final CustomerDAO CustomerDao;
 
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
+    public CustomerService(CustomerDAO dao) {
+        this.CustomerDao = dao;
     }
 
     @PostMapping
     public Customer save(@RequestBody Customer customer){
-        return customerService.save(customer);
+        return CustomerDao.save(customer);
     }
 }

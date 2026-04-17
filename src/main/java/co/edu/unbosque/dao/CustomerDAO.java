@@ -1,17 +1,17 @@
-package co.edu.unbosque.service;
+package co.edu.unbosque.dao;
 
 import co.edu.unbosque.entity.Customer;
-import co.edu.unbosque.repository.CustomerRepository;
+import co.edu.unbosque.persistence.CustomerRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerDAO implements DAO<Customer> {
 
     private final CustomerRepository customerRepository;
 
-    public CustomerServiceImpl(CustomerRepository customerRepository) {
+    public CustomerDAO(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
