@@ -12,7 +12,7 @@ public class Customer {
     private String firstName;
     @Column(name = "Apellido")
     private String lastName;
-    @Column(name = "Correo Electronico", unique = true, nullable = false)
+    @Column(name = "Correo_Electronico", unique = true, nullable = false)
     private String email;
 
     public Customer() {
