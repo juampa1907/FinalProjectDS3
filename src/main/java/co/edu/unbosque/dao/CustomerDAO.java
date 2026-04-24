@@ -1,6 +1,7 @@
 package co.edu.unbosque.dao;
 
 import co.edu.unbosque.entity.Customer;
+import co.edu.unbosque.exception.ResourceNotFoundException;
 import co.edu.unbosque.persistence.CustomerRepository;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,12 @@ public class CustomerDAO implements DAO<Customer> {
 
     @Override
     public Customer findById(Integer id) {
-        return customerRepository.findById(id).get();
+        Customer customer = customerRepository.findById(id).orElseThrow(
+                () ->{
+                    throw new ResourceNotFoundException("Customer con id " + id + " no se encuentra");
+                }
+        );
+        return customer;
     }
 
     @Override
