@@ -7,22 +7,25 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/customers")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CustomerService {
 
+    //
     private final CustomerDAO customerDao;
 
     public CustomerService(CustomerDAO dao) {
         this.customerDao = dao;
     }
 
-    //localhost:8080/create
+    //http//:localhost:8080/andres/gay/create
     @PostMapping("/create")
     public Customer save(@RequestBody Customer customer){
         return customerDao.save(customer);
     }
 
     //localhost:8080/read
-    @GetMapping("/read")
+    @GetMapping()
     public List<Customer> findAll(){
         return customerDao.findAll();
     }

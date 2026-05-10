@@ -3,7 +3,7 @@ package co.edu.unbosque.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Customers")
+@Table(name = "customers")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
